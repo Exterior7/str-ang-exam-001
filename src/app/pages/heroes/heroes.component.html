@@ -10,14 +10,14 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>#</th>
-          <th>name</th>
-          <th>superPower</th>
-          <th>address</th>
+          <th (click)="onChangeSort('id')">#</th>
+          <th (click)="onChangeSort('name')">name</th>
+          <th (click)="onChangeSort('superPower')">superPower</th>
+          <th (click)="onChangeSort('address')">address</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let hero of heroList | filter:phrase:key">
+        <tr *ngFor="let hero of heroList | filter:phrase:key | sorter:column">
           <td>{{ hero.id }}</td>
           <td>{{ hero.name }}</td>
           <td>{{ hero.superPower }}</td>

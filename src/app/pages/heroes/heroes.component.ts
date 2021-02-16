@@ -11,12 +11,17 @@ import { HeroService } from 'src/app/service/hero.service';
 export class HeroesComponent implements OnInit {
   phrase: string = '';
   key: string = 'name';
+  column: string = '';
 
   // heroList$: BehaviorSubject<Hero[]> = this.heroService.list$;
   heroList: Hero[] = this.heroService.getAll();
 
   onChangeInput(event: Event): void {
     this.phrase = (event.target as HTMLInputElement).value;
+  }
+
+  onChangeSort(key: string): void {
+    this.column = key;
   }
 
   constructor(
