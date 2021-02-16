@@ -9,15 +9,22 @@ import { HeroService } from 'src/app/service/hero.service';
   styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent implements OnInit {
+  phrase: string = '';
+  key: string = 'name';
 
-  heroList$: BehaviorSubject<Hero[]> = this.heroService.list$;
+  // heroList$: BehaviorSubject<Hero[]> = this.heroService.list$;
+  heroList: Hero[] = this.heroService.getAll();
+
+  onChangeInput(event: Event): void {
+    this.phrase = (event.target as HTMLInputElement).value;
+  }
 
   constructor(
     private heroService: HeroService,
   ) { }
 
   ngOnInit(): void {
-    this.heroService.getAll();
+    // this.heroService.getAll();
   }
 
 }

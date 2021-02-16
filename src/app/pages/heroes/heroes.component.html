@@ -1,3 +1,10 @@
+
+<div class="row">
+  <div class="col-12">
+    <input (keyup)="onChangeInput($event)" type="text" class="form-control">
+  </div>
+</div>
+
 <div class="row">
   <div class="col-12">
     <table class="table table-striped">
@@ -10,7 +17,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let hero of heroList$ | async">
+        <tr *ngFor="let hero of heroList | filter:phrase:key">
           <td>{{ hero.id }}</td>
           <td>{{ hero.name }}</td>
           <td>{{ hero.superPower }}</td>
