@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HeroesComponent } from './pages/heroes/heroes.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { SorterPipe } from './pipes/sorter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HomeComponent,
-    HeroesComponent
+    HeroesComponent,
+    FilterPipe,
+    SorterPipe
   ],
   imports: [
     BrowserModule,
